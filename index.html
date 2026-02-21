@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Social Feed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: white;
+        }
+        .top-bar {
+            background: white;
+            border-bottom: 1px solid;
+        }
+        .icon-tab {
+            color: #999;
+            font-size: 1.3rem;
+        }
+        .icon-tab.active {
+            color: #0d6efd;
+        }
+        .photo-box img {
+            height: 28vw;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+    <body>
+    <header class="top-bar py-3 px-4 d-flex justify-content-between align-items-center">
+        <div>
+            <i class="fa-brands fa-instagram fs-4"></i>
+            <span class="fw-bold ms-2">MiniGram</span>
+        </div>
+
+        <div class="d-flex gap-2">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newPost">
+                New Post
+            </button>
+
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary" data-bs-toggle="dropdown">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Setting</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="modal fade" id="newPost" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Create a new post</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control mb-3" placeholder="Add the caption of your post here..."></textarea>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-light"><i class="fa-solid fa-image"></i></button>
+                        <button class="btn btn-light"><i class="fa-solid fa-location-dot"></i></button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <ul class="nav justify-content-center mb-3">
+            <li class="nav-item">
+                <button class="btn icon-tab active" data-bs-toggle="tab" data-bs-target="#gridView">
+                    <i class="fa-solid fa-grip"></i>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="btn icon-tab" data-bs-toggle="tab" data-bs-target="#listView">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+            </li>
+        </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="gridView">
+                    <div class="row g-2">
+                        <div class="col-4 photo-box">
+                            <img src="https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68">
+                        </div>
+                        <div class="col-4 photo-box">
+                            <img src="https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>
+                        <div class="col-4 photo-box">
+                            <img src="https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA">
+                        </div>
+                        <div class="col-4 photo-box">
+                            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=3196&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid">
+                        </div>
+                        <div class="col-4 photo-box">
+                            <img src="https://plus.unsplash.com/premium_photo-1716138192476-f34e85ad43c2?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div> 
+                        <div class="col-4 photo-box">
+                            <img src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?q=80&w=3271&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>  
+                        <div class="col-4 photo-box">
+                            <img src="https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?q=80&w=3176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>  
+                        <div class="col-4 photo-box">
+                            <img src="https://plus.unsplash.com/premium_photo-1661964149725-fbf14eabd38c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>  <div class="col-4 photo-box">
+                            <img src="https://images.unsplash.com/photo-1589786161184-6d43d20526e2?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>  
+                    </div>
+                </div>
+            <div class="tab-pane fade" id="listView">
+                <div class="card my-4 mx-auto" style="max-width: 600px;">
+                    <div class="card-header d-flex justify-content-between">
+                        <strong>My lovely London</strong>
+                        <small>12/01</small>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" class="img-fluid">
+                    <div class="card-body">
+                        <p><strong>320 likes</strong></p>
+                        <p>Good morning</p>
+                    </div>
+                </div>
+                <div class="card my-4 mx-auto" style="max-width: 600px;">
+                    <div class="card-header d-flex justify-content-between">
+                        <strong>Sea Life is always better</strong>
+                        <small>08/01</small>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1570481662006-a3a1374699e8?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="card-body">
+                        <p><strong>2.3k likes</strong></p>
+                        <p>Best moment ever</p>
+                    </div>
+                </div>
+                <div class="card my-4 mx-auto" style="max-width: 600px;">
+                    <div class="card-header d-flex justify-content-between">
+                        <strong>Dream Trip </strong>
+                        <small>05/08</small>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1588979355313-6711a095465f?q=80&w=3072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="card-body">
+                        <p><strong>1.2k likes</strong></p>
+                        <p>Family Time</p>
+                    </div>
+                </div>
+    </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
